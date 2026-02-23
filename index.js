@@ -58,7 +58,7 @@ cloudinary.config({
 
 
 const allowedOrigins = [
-  "https://cws-ems-info.vercel.app.app",
+  "https://cws-ems-info.vercel.app",
   "http://localhost:5173"
 ];
 
@@ -373,7 +373,7 @@ app.post("/admin/add-employee", upload.fields([
       newEmployee.verifyToken = token;
       await newEmployee.save();
 
-      const verifyLink = `https://cws-ems-info.vercel.app.app/employee/verify/${newEmployee._id}/${encodeURIComponent(token)}`;
+      const verifyLink = `https://cws-ems-info.vercel.app/employee/verify/${newEmployee._id}/${encodeURIComponent(token)}`;
 
 
      const setPasswordHtml = await setPasswordTemplate(verifyLink);
@@ -763,7 +763,7 @@ app.post("/sendpasswordlink", async (req, res) => {
     })
     const setusertoken = await User.findByIdAndUpdate({ _id: userfind._id }, { verifytoken: token }, { new: true })
     //console.log("setusertoken",setusertoken)
-    const forLink=`https://cws-ems-info.vercel.app.app/forgotpassword/${userfind._id}/${setusertoken.verifytoken}`
+    const forLink=`https://cws-ems-info.vercel.app/forgotpassword/${userfind._id}/${setusertoken.verifytoken}`
     const resetPasswordHtml= await rePasswordTemplate(forLink);
 
     if (setusertoken) {
