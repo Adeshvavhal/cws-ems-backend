@@ -455,8 +455,8 @@ async function autoGrantLeaveIfProbationCompleted(user) {
   if (today < user.probationEndDate) return;   // still in probation
 
   // default yearly leave
-  const YEARLY_CL = 15;
-  const YEARLY_SL = 6;
+  const YEARLY_CL = 17;
+  const YEARLY_SL = 4;
 
   // credit leave
   user.casualLeaveBalance += YEARLY_CL;
