@@ -485,7 +485,7 @@ async function autoGrantLeaveIfProbationCompleted(user) {
 // Congratulations! You have successfully completed your probation period.
 
 // Your yearly leave balance has now been added:
-// • Casual Leave: +15
+// • Casual Leave: +  ${YEARLY_CL}
 // • Sick Leave: +6
 
 // You can check your updated leave balance on your dashboard.
